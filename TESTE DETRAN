@@ -1,0 +1,156 @@
+print('''
+
+                                  Bem vindo(a)!
+
+  O Simulado On-line do Detran-RJ ajuda na preparação do candidato para o exame de Legislação de Trânsito,
+  que é composto de 30 questões de múltipla escolha e tem duração de 60 minutos.
+
+  Faça quantas provas simuladas desejar para que você tenha um bom aproveitamento no dia do exame.
+
+  1ª Habilitação - Destinado àqueles que irão portar pela 1ª vez sua CNH.
+  Renovação - Destinado aos motoristas já habilitados.
+  CRCI - Destinado a condutores infratores, que tiveram, por qualquer motivo, sua CNH apreendida.
+
+''')
+
+perguntas = {
+    
+    '01': {
+        'pergunta': ' Quando um veículo colide, as lesões do condutor tendem a ser mais graves:',
+        'respostas':{
+            'a': 'quando as janelas estão fechadas',
+            'b': 'quanto maior for a velocidade',
+            'c': 'quando for colisão traseira',
+            'd': 'quando colide com animais'},
+         'resposta_certa': 'b',
+   },
+    
+     '02': {
+        'pergunta': ' O condutor quando tiver a intenção de mudar de faixa de circulação, deverá:',
+        'respostas':{
+            'a': 'acelerar ao executar a conversão',
+            'b': 'buzinar prolongadamente, ao executar a conversão',
+            'c': 'sinalizar com antecedência',
+            'd': 'usar a faixa de rolamento mais longe do sentido de direção a se tomar'},
+          'resposta_certa': 'c',
+   },
+    
+     '03': {
+        'pergunta': ' A maioria das empresas montadoras de veículos especifica que a substituição das palhetas limpadoras de para-brisa deve ocorrer após:',
+        'respostas':{
+            'a': '18 meses da última troca',
+            'b': '20 meses da última troca',
+            'c': '12 meses da última troca',
+            'd': '24 meses da última troca'},
+          'resposta_certa': 'c',
+   },
+    
+     '04': {
+        'pergunta': ' Em certas épocas do ano é frequente o fato de os condutores se depararem com fumaça produzida pelas queimadas em terrenos junto à pista. O procedimento seguro é:',
+        'respostas':{
+            'a': 'reduzir gradativamente a marcha e parar no acostamento, até a fumaça apagar',
+            'b': 'reduzir a velocidade, pois a fuligem proveniente da queimada pode reduzir a aderência do veículo ao piso',
+            'c': 'acionar o farol alto, para ter visibilidade no meio espesso e acelerar',
+            'd': 'aumentar a velocidade, para diminuir a possibilidade das chamas atingirem o veículo'},
+         'resposta_certa': 'b',
+   },
+    
+     '05': {
+        'pergunta': ' A falta de conservação e a desregulagem dos veículos:',
+        'respostas':{
+            'a': 'não agridem o meio ambiente',
+            'b': 'contribuem, principalmente, para a poluição do ar e sonora',
+            'c': 'acarretam, única e exclusivamente, o desgaste do veículo',
+            'd': 'apenas contribuem para a poluição do solo'},
+        'resposta_certa': 'b',
+   },
+    
+    '06': {
+        'pergunta': ' Para habilitar-se na categoria D, o condutor deverá preencher, dentre outros requisitos, o de estar habilitado, no mínimo, há:',
+        'respostas':{
+            'a': 'dois anos na categoria C',
+            'b': 'um ano na categoria C',
+            'c': 'um ano na categoria B',
+            'd': 'cinco anos na categoria B'},
+        'resposta_certa': 'b',
+   },
+    
+    '07': {
+        'pergunta': ' A frota brasileira de veículos automotores é movida por vários tipos de combustíveis. É correto afirmar que:',
+        'respostas':{
+            'a': 'o metanol adicionado ao álcool diminui o teor de poluição do ar',
+            'b': 'no Brasil, os combustíveis alternativos já são utilizados em mais de 90% da frota nacional',
+            'c': 'o gás natural é considerado um combustível alternativo, mas é muito poluente',
+            'd': 'a gasolina e o diesel são os principais agentes poluidores do ar'},
+        'resposta_certa': 'd',
+   },
+    
+    '08': {
+        'pergunta': ' Se você estacionar seu veículo junto aos pontos de embarque ou desembarque de coletivos, terá como punição:',
+        'respostas':{
+            'a': 'remoção do veículo e multa',
+            'b': 'apreensão do veículo e multa',
+            'c': 'remoção do veículo, apenas',
+            'd': 'multa, apenas'},
+        'resposta_certa': 'a',
+   },
+    
+    '09': {
+        'pergunta': ' Usar no veículo equipamento de som em volume ou frequência que não sejam autorizados pelo CONTRAN, é uma infração:',
+        'respostas':{
+            'a': 'grave',
+            'b': 'leve',
+            'c': 'moderada',
+            'd': 'gravíssima'},
+         'resposta_certa': 'a',
+   },
+    
+    '10': {
+        'pergunta': ' Em caso de semáforo com problemas, funcionando somente com a luz amarela piscando, o condutor deve:',
+        'respostas':{
+            'a': 'reduzir a velocidade e acionar a buzina sucessivamente para advertir os outros condutores',
+            'b': 'reduzir a velocidade e acionar o farol baixo',
+            'c': 'reduzir a velocidade e ultrapassar com cuidado o cruzamento',
+            'd': 'manter a velocidade e avançar no cruzamento'},
+        'resposta_certa': 'c',
+   },
+
+    
+   }
+
+
+print("SIMULADO DA PROVA DE HABILITAÇÃO \n")
+respostas_certas = 0
+
+for pk , pv in perguntas.items():
+    
+    print(f'{pk}: {pv["pergunta"]}')
+
+    for rk, rv in pv['respostas'].items():
+        print(f'{rk}) {rv}')
+    print()
+
+    resposta_user = input('Sua resposta:')
+
+    if resposta_user == pv['resposta_certa']:
+        print('respostas certa!')
+        respostas_certas +=1
+
+qtd_perguntas = len(perguntas)
+percentual = respostas_certas / qtd_perguntas * 100
+
+print(f"Você acertou {respostas_certas} respostas.")
+print(f'sua porcentagem de acerto foi {percentual}%')
+    
+
+
+
+
+
+
+
+
+
+
+
+
