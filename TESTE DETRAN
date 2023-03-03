@@ -136,21 +136,8 @@ for pk , pv in perguntas.items():
         print('respostas certa!')
         respostas_certas +=1
 
-qtd_perguntas = len(perguntas)
-percentual = respostas_certas / qtd_perguntas * 100
+qtd_perguntas = len(perguntas['pergunta'])
+point = respostas_certas // (qtd_perguntas * 100)
 
 print(f"Você acertou {respostas_certas} respostas.")
 print(f'sua porcentagem de acerto foi {percentual}%')
-    
-
-
-
-
-
-
-
-
-
-
-
-
